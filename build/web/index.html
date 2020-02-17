@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Chat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                font-family:monospace;
+                font-size:19px;
+                margin-left:300px;
+                margin-right: 300px;
+            }
+            textarea{
+                padding:5px;
+                margin:5px;
+
+            }
+            a:link{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h2>Chat Jakarta EE App Demo</h2>
+            <p>Very simple Jakarta EE websocket Application </p>
+
+            
+                <input type='text' id="inputmessage" style="width:576px;padding:5px;margin:4px;" required>
+                <input type='submit' value='Chat' onclick='see();' style="padding:5px;margin:5px;width:100px;background-color:rgb(61, 52, 235);color:white;border:thin solid rgb(15, 12, 64);">
+            
+            <br/>
+            <textarea id="chatarea" cols="80" rows="20" disabled="" wrap="soft">
+                
+            </textarea>
+            <br/>
+            <a href="#">Help Link</a> | <a href="%">Contact Me</a> | <a href="@">Email Address</a>
+            <script>
+                <!--
+                
+                try{
+                var webSocket =new WebSocket('ws://localhost:8080/ChatApp/chatDemo');
+
+                webSocket.onerror = function (event) {
+                    onError(event);
+                };
+
+                webSocket.onopen = function (event) {
+                    onOpen(event);
+                };
+
+                webSocket.onmessage = function (event) {
+                    onMessage(event);
+                };
+
+                function onMessage(event) {
+                    document.getElementById('chatarea').innerHTML+= '<br />Received message: ' + event.data;
+                }
+
+                function onOpen(event) {
+                    document.getElementById('chatarea').innerHTML = 'Connection established';
+                }
+
+                function onError(event) {
+                    alert(event.data);
+                }
+
+                function start() {
+                    var txt = document.getElementById('inputmessage').value;
+                    webSocket.send(txt);
+                    return false;
+                }
+                }catch(E){
+                alert(E);
+                }
+                function see(){
+                 document.getElementById('chatarea').innerHTML = document.getElementById('inputmessage').value;
+                 }
+                //-->
+            </script>
+        </div>
+    </body>
+</html>
